@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 int main() {
-   int arr[]={1,2,3,4,5,1,2,3,3,0},i,j,count;
+   int arr[]={1,6,3,4,5,1,6,3,3,0},i,j,count;
    int freq[]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
    int duplicate=0,unique=0;
    int n = sizeof(arr)/sizeof(arr[0]);
@@ -20,10 +20,8 @@ int main() {
    }
    int mcount=0;
   for(i=0;i<n;i++)
-  {   if(freq[i]>0)
-      {  if(freq[i]%3==0)
-          mcount++;
-      }
+  {   if(freq[i]>1 && arr[i]%3==0)
+      { mcount++; }
   }
   printf("Duplicate elements divisible by 3: %d",mcount);
   return 0;
